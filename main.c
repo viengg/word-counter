@@ -12,7 +12,7 @@
 #endif
 
 #define MAX 2111         //Numero primo como escolha para o tamanho da tabela hash, porque foi recomendado que fosse :p
-#define TAM_PALAVRA 46       //Maior palavra da lingua portuguesa tem 46 letras (pneumoultramicroscopicossilicovulcanoconiótico)
+#define TAM_PALAVRA 46       //Maior palavra da lingua portuguesa tem 46 letras (pneumoultramicroscopicossilicovulcanoconiÃ³tico)
 
 typedef struct {
     char Chave[TAM_PALAVRA];
@@ -259,7 +259,7 @@ int main(int argc, char *argv[]){
         inicializaSeq(&TabSeq);
         while(lePalavra(arquivoSource, palavra)) {           //Enquanto o programa conseguir ler palavras
             indice = pesquisaSeq(palavra, &TabSeq);
-            if (palavra[0] != '\0'){                    //Esse caso só acontece quando o programa lê dois caracteres invalidos (segundo a funçao validaChar) seguidos
+            if (palavra[0] != '\0'){                    //Esse caso sÃ³ acontece quando o programa lÃª dois caracteres invalidos (segundo a funÃ§ao validaChar) seguidos
                 if (indice == 0)                          //Nao achou a palavra na tabela
                     insereSeq(palavra, &TabSeq);
                 else                                      //Achou a palavra na tabela
@@ -292,7 +292,7 @@ int main(int argc, char *argv[]){
         imprimeHash(Dicionario, arquivoDestino);
     }
 
-   // fprintf(arquivoDestino, "\nTEMPO DE EXECUÇÃO: %.5fs\n", getTime() - tempoInicial);             //Calcula o tempo de execução
+    fprintf(arquivoDestino, "\nTEMPO DE EXECUÃ‡ÃƒO: %.5fs\n", getTime() - tempoInicial);             //Calcula o tempo de execuÃ§Ã£o
 
     free(palavra);
     fclose(arquivoSource);
